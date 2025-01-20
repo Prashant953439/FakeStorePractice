@@ -6,6 +6,8 @@ import com.ecommerce.productservicedec24.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -23,6 +25,12 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    @GetMapping("")
+    public @ResponseBody List<GetProductDto> getAllProducts(){
+        return productService.getAllProducts();
+    }
+
+
     @PostMapping("")
     public String createProduct(@RequestBody Product product){
         System.out.println(product.getId());
@@ -30,5 +38,6 @@ public class ProductController {
         System.out.println(product.getPrice());
         return "Product created.";
     }
+
 
 }

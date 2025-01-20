@@ -1,0 +1,2 @@
+# FakeStorePractice
+My Personal project 
